@@ -5,7 +5,7 @@
 There are two main 'versions' of the docker image. The table below shows the different tags you can use, along with the PHP, MySQL and Apache versions that come with it.
 
 Component | `latest-2004-php7` `latest-2004-php8`
----|---|---|---|---
+---|---
 [Apache][apache] | `2.4.41`
 [MySQL][mysql] | `8.0.26`
 [PHP][php] | `7.4.23`/`8.0.10`
