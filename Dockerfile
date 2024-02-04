@@ -73,6 +73,9 @@ RUN pip2 install matplotlib pycomm mpld3 pandas
 RUN apt-get -y install python3-pip
 RUN pip3 install matplotlib sqlalchemy alpha_vantage pandas_datareader pandas bs4
 
+# Add certbot for ssl encyption
+RUN apt-get -y install certbot python3-certbot-apache
+
 # Add composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \
