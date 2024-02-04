@@ -23,17 +23,9 @@ docker build --build-arg PHP_VERSION=8.0 -t=0001ca/uapp:latest -f Dockerfile .
 docker build --build-arg PHP_VERSION=8.0 -t=0001ca/uapp:latest-2004-php8 -f Dockerfile .
 docker build --build-arg PHP_VERSION=7.4 -t=0001ca/uapp:latest-2004-php7 -f Dockerfile .
 
-# Run the image as a container
-docker run -d -p "3000:80" 0001ca/uapp:latest
-
 #Run the image as a container adding app data folder and persistant mysql
 docker run -i -t -p "80:80" -v ${PWD}/app:/app -p 3306:3306 -v ${PWD}/mysql:/var/lib/mysql 0001ca/uapp:latest
 
-# Sleep to allow the container to boot
-sleep 30
-
-# Curl out the contents of our new container
-curl "http://$(docker-machine ip):3000/"
 ```
 
 
