@@ -64,6 +64,9 @@ RUN tar xfvz /tmp/phpmyadmin.tar.gz -C /var/www
 RUN ln -s /var/www/phpMyAdmin-${PHPMYADMIN_VERSION}-all-languages /var/www/phpmyadmin
 RUN mv /var/www/phpmyadmin/config.sample.inc.php /var/www/phpmyadmin/config.inc.php
 
+# Set the localhost time
+RUN cp /usr/share/zoneinfo/Canada/Pacific /etc/localtime
+
 # Add pip2 and some libs
 RUN wget -O /tmp/get-pip.py https://bootstrap.pypa.io/pip/2.7/get-pip.py
 RUN python2 /tmp/get-pip.py
