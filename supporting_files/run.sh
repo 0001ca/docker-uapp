@@ -106,7 +106,7 @@ if [[ ! -d $VOLUME_HOME/mysql ]]; then
     fi
 
     echo "=> Done!"
-    /create_mysql_users.sh
+    /bin/bash /create_mysql_users.sh
 else
     echo "=> Using an existing volume of MySQL"
 fi
